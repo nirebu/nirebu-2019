@@ -1,0 +1,25 @@
+{
+  "name": "nirebu-2019",
+  "version": "1.0.0",
+  "description": "Personal website for Nicolò Rebughini",
+  "author": "Nicolò Rebughini",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.4.0",
+    "@nuxtjs/axios": "^5.3.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^0.1.2",
+    "bulma": "^0.7.4",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "sass-loader": "^7.1.0"
+  }
+}
