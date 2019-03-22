@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.3.6"
   },
   "devDependencies": {
+    "@nuxtjs/markdownit": "^1.2.3",
     "@nuxtjs/style-resources": "^0.1.2",
     "bulma": "^0.7.4",
     "node-sass": "^4.11.0",

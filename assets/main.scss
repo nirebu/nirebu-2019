@@ -4,34 +4,15 @@ $primary: #6500E5;
 $link: $primary;
 $link-hover:#940DFF;
 
-.has-bg-img { background: url('images/hero.jpg') center center; background-size: cover; }
-.is-horizontal-center { justify-content: center; }
-
-.roles {
-	margin-top: -125px;
-}
-
-.role {
-	> ul {
-		list-style: inside !important;
-		list-style-type: none !important;
-		list-style-image: none !important;
-		margin-left: 0 !important;
-	}
-}
-			
-.bio { padding: 32px 16px; padding-bottom: 125px; }
-.profile-picture { margin-bottom: 24px; }
-
 .nirebu-title {
-	font-family: 'Capriola', sans-serif;
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
+  font-family: 'Capriola', sans-serif;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .has-background-gradient {
-	background-image: linear-gradient(to bottom, $link-hover, $primary);
+  background-image: linear-gradient(to bottom, $link-hover, $primary);
 }
 
 @import "~bulma/bulma.sass";
