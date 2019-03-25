@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="content has-text-centered">
-      <p>&copy; Nicol&ograve; Rebughini</p>
+      <p><a href="https://github.com/nirebu/nirebu-2019">Coded by</a> &copy; Nicol&ograve; Rebughini</p>
     </div>
   </footer>
 </template>
