@@ -1,22 +1,13 @@
 <template>
   <section class="container">
-    <div>
-      <div v-html="test"></div>
+    <div class="columns is-centered">
+      <div class="content column is-8"></div>
     </div>
   </section>
 </template>
 
 <script>
-import test1 from 'static/test1.md'
-export default {
-  components: {
-  },
-  computed: {
-    test () {
-      return test1
-    }
-  }
-}
+
 </script>
 
 <style>
