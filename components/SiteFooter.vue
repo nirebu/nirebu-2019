@@ -12,7 +12,8 @@
       </div>
     </div>
     <div class="content has-text-centered">
-      <p><a href="https://github.com/nirebu/nirebu-2019">Coded by</a> &copy; Nicol&ograve; Rebughini</p>
+      <p><a href="https://github.com/nirebu/nirebu-2019">Coded by</a> &copy; Nicol&ograve; Rebughini with <a href="https://vuejs.org/">Vuejs</a> + <a href="https://nuxtjs.org/">Nuxtjs</a></p>
+      <p>Hosted on <a href="https://netlify.com">Netlify</a></p>
     </div>
   </footer>
 </template>

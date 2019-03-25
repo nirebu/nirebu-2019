@@ -15,4 +15,14 @@ $link-hover:#940DFF;
   background-image: linear-gradient(to bottom, $link-hover, $primary);
 }
 
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.section {
+  flex: 1;
+}
+
 @import "~bulma/bulma.sass";

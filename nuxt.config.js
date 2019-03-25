@@ -56,7 +56,7 @@ module.exports = {
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
     "@nuxtjs/markdownit",
-    '@nuxtjs/google-analytics'
+    "@nuxtjs/google-analytics"
   ],
   /*
    ** Axios module configuration
@@ -66,11 +66,14 @@ module.exports = {
   },
 
   markdownit: {
-    injected: true
+    injected: true,
+    html: true,
+    linkify: true,
+    breaks: true
   },
 
-  googleAnalytics :{
-    id: 'UA-133940660-1'
+  googleAnalytics: {
+    id: "UA-133940660-1"
   },
 
   /*
