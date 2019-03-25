@@ -12,13 +12,13 @@
         <span></span>
       </div>
     </div>
-    <div class="navbar-menu">
+    <!--<div class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item">
           <nuxt-link class="button is-primary" to="/blog/">Blog</nuxt-link>
         </div>
       </div>
-    </div>
+    </div>-->
   </nav>
 </template>
 
