@@ -1,4 +1,5 @@
 const pkg = require("./package");
+const path = require('path');
 
 module.exports = {
   mode: "universal",
@@ -11,7 +12,10 @@ module.exports = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: pkg.description }
+      { hid: "description", name: "description", content: pkg.description },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@nirebu' },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -55,7 +59,6 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
-    "@nuxtjs/markdownit",
     "@nuxtjs/google-analytics"
   ],
   /*
@@ -63,13 +66,6 @@ module.exports = {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-  },
-
-  markdownit: {
-    injected: true,
-    html: true,
-    linkify: true,
-    breaks: true
   },
 
   googleAnalytics: {
@@ -83,6 +79,17 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: "frontmatter-markdown-loader",
+        include: path.resolve(__dirname, "static/articles"),
+        options: {
+          vue: {
+            root: "dynamicMarkdown"
+          }
+        }
+      });
+    }
   }
 };

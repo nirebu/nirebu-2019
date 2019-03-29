@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import PersonalBio from "../components/PersonalBio";
-import Roles from "../components/Roles";
-import SiteHero from "../components/SiteHero";
+import PersonalBio from "~/components/PersonalBio";
+import Roles from "~/components/Roles";
+import SiteHero from "~/components/SiteHero";
 
 export default {
   components: {
