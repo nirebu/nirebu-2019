@@ -5,7 +5,7 @@
 <script>
 export default {
   async asyncData({ params }) {
-    const content = await import(`~/static/articles/${params.post}.md`);
+    const content = await import(`~/articles/${params.post}.md`);
     return {
       content
     };

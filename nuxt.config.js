@@ -83,7 +83,7 @@ module.exports = {
       config.module.rules.push({
         test: /\.md$/,
         loader: "frontmatter-markdown-loader",
-        include: path.resolve(__dirname, "static/articles"),
+        include: path.resolve(__dirname, "articles"),
         options: {
           vue: {
             root: "dynamicMarkdown"
