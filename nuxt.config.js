@@ -1,5 +1,6 @@
 const pkg = require("./package");
-const path = require('path');
+const path = require("path");
+import blogs from "./assets/blogList.js";
 
 module.exports = {
   mode: "universal",
@@ -13,9 +14,9 @@ module.exports = {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: pkg.description },
-      { name: 'robots', content: 'index, follow' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@nirebu' },
+      { name: "robots", content: "index, follow" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@nirebu" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -91,5 +92,11 @@ module.exports = {
         }
       });
     }
+  },
+
+  generate: {
+    routes: [].concat(
+      blogs.map(blog => `/blog/${blog.replace(/\.[^/.]+$/, "")}`)
+    )
   }
 };
