@@ -1,6 +1,6 @@
 ---
 title: Questo è il primo post
-description: questa descrizione
+description: Questo è il riassunto del post
 ---
 
 # This is a header

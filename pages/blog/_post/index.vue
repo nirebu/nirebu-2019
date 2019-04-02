@@ -11,7 +11,16 @@ export default {
     };
   },
   head() {
-    return { title: this.content.attributes.title };
+    return {
+      titleTemplate: `${this.content.attributes.title} | %s`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.content.attributes.description
+        }
+      ]
+    };
   }
 };
 </script>
