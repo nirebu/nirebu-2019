@@ -13,7 +13,17 @@ module.exports = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: pkg.description },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Nicolò Rebughini is a Linux system administrator focusing on email deliverability, system standardisation and deployment automation"
+      },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content: "vuejs, nuxt, javascript, sysadmin, ansible, mongodb"
+      },
       { name: "robots", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@nirebu" }
@@ -72,6 +82,8 @@ module.exports = {
   googleAnalytics: {
     id: "UA-133940660-1"
   },
+
+  serverMiddleware: ['~/api/index.js',],
 
   /*
    ** Build configuration

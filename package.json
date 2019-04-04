@@ -19,7 +19,9 @@
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/style-resources": "^0.1.2",
     "bulma": "^0.7.4",
+    "express": "^4.16.4",
     "frontmatter-markdown-loader": "^1.6.0",
+    "fs": "0.0.1-security",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
     "sass-loader": "^7.1.0"
