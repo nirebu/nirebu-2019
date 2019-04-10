@@ -9,9 +9,9 @@
               <img class="is-rounded" src="~assets/images/profile.jpg">
             </figure>
           </div>
-          <h2
-            class="subtitle is-size-5 has-text-white"
-          >I'm a Linux sysadmin focusing on email deliverability, system standardisation and deployment automation.</h2>
+          <h2 class="subtitle is-size-5 has-text-white">
+            I'm a Linux sysadmin focusing on email deliverability, system standardisation and deployment automation.
+          </h2>
           <h2
             class="subtitle is-size-5 has-text-white"
           >On top of that I'm learning full stack web development exploring different options available like React and Vue, with Node.js on the backend.</h2>

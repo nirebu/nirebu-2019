@@ -1,6 +1,5 @@
 const pkg = require("./package");
 const path = require("path");
-import blogs from "./assets/blogList.js";
 
 module.exports = {
   mode: "universal",
@@ -83,8 +82,6 @@ module.exports = {
     id: "UA-133940660-1"
   },
 
-  serverMiddleware: ['~/api/index.js',],
-
   /*
    ** Build configuration
    */
@@ -104,11 +101,5 @@ module.exports = {
         }
       });
     }
-  },
-
-  generate: {
-    routes: [].concat(
-      blogs.map(blog => `/blog/${blog.replace(/\.[^/.]+$/, "")}`)
-    )
   }
 };

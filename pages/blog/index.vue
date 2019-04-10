@@ -1,20 +1,23 @@
 <template>
   <div>
-  <LatestArticles />
-  {{ blogPosts }}
+    <LatestArticles :posts="result.results" />
   </div>
 </template>
 
 <script>
-import LatestArticles from '~/components/LatestArticles';
+import Prismic, { api } from "prismic-javascript";
+import LatestArticles from "~/components/LatestArticles";
 
 export default {
   components: {
     LatestArticles
   },
-  async asyncData({$axios}){
-    const blogPosts = await $axios.$get('/api/bloglist');
-    return {blogPosts}
+  async asyncData(context) {
+    let apiEndPoint = "https://nirebucom.cdn.prismic.io/api/v2";
+    const api = await Prismic.getApi(apiEndPoint);
+    const result = await api.query('');
+
+    return {result};
   }
-}
+};
 </script>
