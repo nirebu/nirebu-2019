@@ -1,11 +1,9 @@
 //const pkg = require("./package");
 const glob = require('glob')
-
-let files = glob.sync('articles/**/*.md',{});
+let files = glob.sync('**/*.md',{cwd: 'articles'});
 
 function getSlugs(post, _) {
   let slug = post.substr(0, post.lastIndexOf('.'));
-  slug = slug.substr(slug.lastIndexOf('/') + 1 );
   return `/blog/${slug}`;
 }
 
@@ -24,12 +22,12 @@ module.exports = {
         hid: "description",
         name: "description",
         content:
-          "Nicolò Rebughini is a Linux system administrator focusing on email deliverability, system standardisation and deployment automation"
+          "Nicolò Rebughini is a Linux system administrator focusing on email deliverability, system standardisation, deployment automation and containerisation."
       },
       {
         hid: "keywords",
         name: "keywords",
-        content: "vuejs, nuxt, javascript, sysadmin, ansible, mongodb"
+        content: "vuejs, nuxt, javascript, sysadmin, frontend, ansible, mongodb, docker"
       },
       { name: "robots", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -94,19 +92,16 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
     extend(config, ctx) {
       config.module.rules.push({
         test: /\.md$/,
         use: ['raw-loader']
-    })
-  }
-  },
-    generate: {
-      routes: function() {
-          return files.map(getSlugs)
-      }
+      });
     }
+  },
+  generate: {
+    routes: function() {
+      return files.map(getSlugs)
+    }
+  }
 };
