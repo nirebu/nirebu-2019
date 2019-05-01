@@ -1,17 +1,12 @@
 //const pkg = require("./package");
-const path = require("path");
-
 const glob = require('glob')
 
-let files = []
-
-glob('./articles/*.md', function(err, output) {
-  files = output;
-})
+let files = glob.sync('articles/**/*.md',{});
 
 function getSlugs(post, _) {
   let slug = post.substr(0, post.lastIndexOf('.'));
-  return `/articles/${slug}`;
+  slug = slug.substr(slug.lastIndexOf('/') + 1 );
+  return `/blog/${slug}`;
 }
 
 module.exports = {
@@ -107,11 +102,11 @@ module.exports = {
         test: /\.md$/,
         use: ['raw-loader']
     })
+  }
   },
     generate: {
       routes: function() {
           return files.map(getSlugs)
       }
     }
-  }
 };
