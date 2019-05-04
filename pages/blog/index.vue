@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  async asyncData () {
+  async asyncData ({ params, error, payload }) {
 
     function getSlugs(post, _) {
       let slug = post.substr(0, post.lastIndexOf('.'));
@@ -40,8 +40,8 @@ export default {
       let dateA = new Date(a.ctime), dateB = new Date(b.ctime);
       return dateB-dateA;
     })
-
-    return { bloglist };
+    if(payload) return {data: "zilch"};
+    else return { bloglist };
   }
 }
 </script>

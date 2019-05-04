@@ -107,7 +107,7 @@ module.exports = {
   },
   generate: {
     routes: function() {
-      return files.map(getSlugs).concat('/blog')
+      return files.map(getSlugs).concat({route: '/blog', payload: files.map(getSlugs)})
     }
   }
 };
