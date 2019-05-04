@@ -2,10 +2,10 @@
   <div :key="$route.params.post">
     <div class="container">
       <div class="columns is-centered">
-        <div class="blog column is-10-tablet">
+        <div class="blog column is-9-tablet">
           <div class="title">{{ attributes.title }}</div>
-          <div class="subtitle">Published on {{attributes.ctime}} by {{ attributes.author }}</div>
-          <div v-html="content" class="blog-content content"></div>
+          <div class="subtitle">Published on <time>{{attributes.ctime}}</time> by {{ attributes.author }}</div>
+          <article v-html="content" class="blog-content content"></article>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@ const fm = require("front-matter");
 const md = require("markdown-it")({
   html: true,
   typographer: true
-});
+}).use(require('markdown-it-highlightjs'),{auto:true});
 
 export default {
   async asyncData({ params }) {

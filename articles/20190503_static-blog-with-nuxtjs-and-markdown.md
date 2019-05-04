@@ -1,15 +1,17 @@
 ---
-title: Building a blog with NuxtJs and Markdown
-slug: building-a-blog-with-nuxtjs-and-markdown
-description: ND
-author: Nicolò Rebughini
-ctime: '2019-05-01'
-utime: '2019-05-01'
+title: Building a static blog with NuxtJs and Markdown as a beginner
+published: true
+description: A summary of my ongoing journey to get a statically generated blog up and running with the help of NuxtJS and Markdown
+tags: javascript,vue,showdev,beginners
+cover_image: https://thepracticaldev.s3.amazonaws.com/i/blnv67k6onk7usvqq1z9.jpg
+ctime: 2019-05-02
 ---
 
-After dabbling for too much time I've finally made it: my [JAM Stack](https://jamstack.org/) blog is up. You can also explore its source code on [my Github repo](https://github.com/nirebu/nirebu-2019/)
+Hi there, this is my first post here... or anywhere since I've never blogged before! I'm [Nicolò Rebughini](https://nirebu.com/), a sysadmin trying to get a hold of modern web development pratices. I've specialised in CS at high school, but had been a video post production tech for many years, and came back to the IT world a little more than a year ago wearing the sysadmin hat. Right now I'm updating myself and learning to use tools like [Ansible](https://ansible.com/) and [Docker](https://docker.com/) to standardise and streamline the stack of my workplace.
 
 ## Beginning of the journey
+
+I left the development and operations worlds when Bootstrap's first version wasn't even released (Wikipedia says it happened in 2011), after exploring the now infinite options and experimenting for too much time I've finally made it: my [JAM Stack](https://jamstack.org/) blog is shaping up. You can also explore its source code on [my Github repo](https://github.com/nirebu/nirebu-2019/).
 
 As a totally green web developer, I started this website with the tools I already knew, so I cobbled together a single `index.html` webpage and tried some new toys that have come a long way since I last went in and written something from scratch. [Explore the source](https://github.com/nirebu/nirebu-personal-website/) for the 2018 version on Github.
 
@@ -59,7 +61,7 @@ module.exports = {
 }
 ```
 
-After setting the correct path of the `bulma.sass` file in my `main.scss` all the styles fixed themselves. Yay! Success! (after hours of trial and error)
+After setting the correct path of the `bulma.sass` file in my `main.scss` all the styles fixed themselves. Yay! Success! (After hours of trial and error)
 
 ## Refactoring website header and footer in components
 
@@ -67,7 +69,7 @@ To take advantage of the intrinsic modularisation of Nuxt, I split the navbar an
 
 After this, my `layouts/default.vue` file looks like this:
 
-```javascript
+```vue
 <template>
   <div class="main">
     <NavBar />
@@ -120,7 +122,7 @@ module.exports = {
 
 In the `pages/blog/_post/index.vue` file is where the magic happens (at least for me). Given the fact that `markdownit` doesn't support reading the markdown metadata, where the article info is stored, we need to decouple the process of getting the content and the attributes (as are called by front-matter):
 
-```javascript
+```vue
 <script>
 // Let's require the needed modules
 const fm = require("front-matter");
@@ -152,7 +154,7 @@ export default {
 
 With this data filled up, we can populate some elements:
 
-```javascript
+```vue
 <template>
   <div :key="$route.params.post">
     <div class="container">
@@ -220,6 +222,10 @@ module.exports = {
 
 If I didn't forget anything, you should have at least a resemblance of a Markdown blog post viewer and you should be able to succesfully build all the pages and deploying your blog to your favourite static site hosting service.
 
-`npm run generate`
+The command `npm run generate` will get us the `build` directory containing our fresh statically generated website.
 
-From this guide, and from my website, are missing some parts that I'm going to implement, like using Vuex to store all the blog posts metadata and using that info to render a list of articles. Right now I can only write single blog posts and link them somewhere.
+From this guide, and from my website, are missing **crucial** parts that I'm going to implement, like using Vuex to store all the blog posts metadata and using that info to render a list of articles. Right now I can only write single blog posts and link them somewhere. Expect an update or a new post about those also!
+
+Thanks for reading!
+
+Cover photo by Jonathan Pielmayer on [Unsplash](https://unsplash.com) // This post will appear also on my blog, when it will be somewhat functional.

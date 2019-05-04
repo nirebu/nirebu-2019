@@ -1,23 +1,47 @@
 <template>
   <div>
-    <LatestArticles :posts="result.results" />
+    <div v-for="(post,key) in bloglist" :key="key">
+      {{ post }}
+    </div>
   </div>
 </template>
 
 <script>
-import Prismic, { api } from "prismic-javascript";
-import LatestArticles from "~/components/LatestArticles";
-
 export default {
-  components: {
-    LatestArticles
-  },
-  async asyncData(context) {
-    let apiEndPoint = "https://nirebucom.cdn.prismic.io/api/v2";
-    const api = await Prismic.getApi(apiEndPoint);
-    const result = await api.query('');
+  async asyncData () {
 
-    return {result};
+    function getSlugs(post, _) {
+      let slug = post.substr(0, post.lastIndexOf('.'));
+      return `/blog/${slug}`;
+    }
+
+    const glob = require('glob');
+    const fm = require("front-matter");
+
+    const files = glob.sync('**/*.md',{cwd: 'articles'});
+
+    const bloglist = (
+      await Promise.all(
+        files.map(
+          async file => {
+            const fileContent = await import(`~/articles/${file}`);
+            let attrs = fm(fileContent.default).attributes;
+            let slug = file.substr(0, file.lastIndexOf('.'));
+            slug = slug.substr(slug.lastIndexOf('_')+1);
+            attrs.slug = slug;
+            return attrs
+          }
+        )
+      )
+    )
+
+    // sort based by date descending
+    bloglist.sort( (a,b) => {
+      let dateA = new Date(a.ctime), dateB = new Date(b.ctime);
+      return dateB-dateA;
+    })
+
+    return { bloglist };
   }
-};
+}
 </script>

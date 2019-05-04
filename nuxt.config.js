@@ -22,7 +22,7 @@ module.exports = {
         hid: "description",
         name: "description",
         content:
-          "Nicolò Rebughini is a Linux system administrator focusing on email deliverability, system standardisation, deployment automation and containerisation."
+          "Hi, I'm Nicolò, a Linux system administrator focusing on email deliverability, system standardisation, deployment automation and containerisation."
       },
       {
         hid: "keywords",
@@ -61,7 +61,9 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ["assets/main.scss"],
+  css: [
+    "assets/main.scss"
+  ],
 
   /*
    ** Plugins to load before mounting the App
@@ -97,11 +99,15 @@ module.exports = {
         test: /\.md$/,
         use: ['raw-loader']
       });
+      config.node = {
+        fs: 'empty',
+        glob: 'empty'
+      };
     }
   },
   generate: {
     routes: function() {
-      return files.map(getSlugs)
+      return files.map(getSlugs).concat('/blog')
     }
   }
 };
