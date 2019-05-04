@@ -37,7 +37,7 @@ Styling for embedded blocks of code
 
 ### Vuex integration
 
-I want to make the process to grab the blog posts (correlating the slugs to the filenames) more robust storing them in the Vuex store, so I can said data to display a blog posts list without having to fetch read the file system again. Also, I will be able to decouple the slugs from the filenames.
+I want to make the process to grab the blog posts (correlating the slugs to the filenames) more robust storing them in the Vuex store, so I can use said data to display a blog posts list without having to read the file system again. Also, I will be able to decouple the slugs from the filenames.
 
 ### Latest articles component
 
