@@ -1,15 +1,18 @@
 <template>
-  <div :key="$route.params.post">
+  <section :key="$route.params.post" class="section">
     <div class="container">
       <div class="columns is-centered">
-        <div class="blog column is-9-tablet">
-          <div class="title">{{ attributes.title }}</div>
+        <article class="blog column is-9-tablet">
+          <header class="title">{{ attributes.title }}</header>
           <div class="subtitle">Published on <time>{{attributes.ctime}}</time> by {{ attributes.author }}</div>
-          <article v-html="content" class="blog-content content"></article>
-        </div>
+          <div v-html="content" class="blog-content content"></div>
+          <div class="level">
+            <nuxt-link to="/blog/" class="level-left">&larr; Back to blog</nuxt-link>
+          </div>
+        </article>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -27,6 +30,14 @@ export default {
       attributes: res.attributes,
       content: md.render(res.body)
     };
+  },
+  head() {
+    return {
+      title:  this.attributes.title,
+      meta: [
+        { hid: 'description' , name: 'description' , content: this.attributes.description }
+      ]
+    }
   }
 };
 </script>

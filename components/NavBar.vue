@@ -12,15 +12,13 @@
         <span></span>
       </div>
     </div>
-    <!--
-      changed from nuxt.link to regular <a> to make the back button work, mixed with the state usage
       <div class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <a class="button is-primary" href="/blog/">Blog</a>
+          <nuxt-link class="button is-primary" to="/blog/">Blog</nuxt-link>
         </div>
       </div>
-    </div>-->
+    </div>
   </nav>
 </template>
 

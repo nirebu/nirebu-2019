@@ -9,12 +9,9 @@ function getSlugs(post, _) {
 
 module.exports = {
   mode: "universal",
-
-  /*
-   ** Headers of the page
-   */
   head: {
     title: "Nicolò Rebughini | Sysadmin // Webdev",
+    titleTemplate: "%s - Nicolò Rebughini | Sysadmin // Webdev",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -49,50 +46,21 @@ module.exports = {
       }
     ]
   },
-
-  /*
-   ** Customize the progress-bar color
-   */
   loading: { color: "#fff" },
   server: {
     host: "0.0.0.0",
     port: 3000
   },
-  /*
-   ** Global CSS
-   */
-  css: [
-    "assets/main.scss"
-  ],
-
-  /*
-   ** Plugins to load before mounting the App
-   */
+  css: [ "assets/main.scss" ],
   plugins: [],
-
-  /*
-   ** Nuxt.js modules
-   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
     "@nuxtjs/google-analytics"
   ],
-
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-
   googleAnalytics: {
     id: "UA-133940660-1"
   },
-  /*
-   ** Build configuration
-   */
   build: {
     extend(config, ctx) {
       config.module.rules.push({
