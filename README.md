@@ -41,7 +41,7 @@ Building a sitemap with @nuxtjs/sitemap
 
 ### Blog pagination and general styling
 
-Right now my 
+Right now my blog page is really ugly, and need pagination
 
 ### Latest articles component
 
