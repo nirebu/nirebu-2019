@@ -8,13 +8,13 @@ A little place to fool around with new things and post some ramblings in a blog
 
 ## Build setup
 
-Clone this repo, then
+Clone this repo and run the following commands
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
+# start the development server at localhost:3000
 $ npm run dev
 
 # build for production and launch server
@@ -33,11 +33,15 @@ Not a comprehensive list of things I want to do
 
 ### Code styling
 
-Styling for embedded blocks of code
+Styling for embedded blocks of Vue code
 
-### Vuex integration
+### Sitemap
 
-I want to make the process to grab the blog posts (correlating the slugs to the filenames) more robust storing them in the Vuex store, so I can use said data to display a blog posts list without having to read the file system again. Also, I will be able to decouple the slugs from the filenames.
+Building a sitemap with @nuxtjs/sitemap
+
+### Blog pagination and general styling
+
+Right now my 
 
 ### Latest articles component
 

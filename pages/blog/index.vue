@@ -26,27 +26,13 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
-  async asyncData( { context,store } ) {
-    let bloglist;
-
-    if (!( store.state.blog.list.length > 0 ))
-    {
-      const fm = require('front-matter');
-      var files = await require.context('~/articles/', false, /\.md$/)
-      var posts = files.keys().map(function(key){
-        var res = files(key);
-        res.slug = key.slice(2, -3);
-        return res;
-      }).map(function(post){
-        let attributes = fm(post.default).attributes;
-        attributes.slug = post.slug;
-        return attributes
-      });
-
-      store.commit("blog/set", posts);
+  computed: {
+    bloglist() {
+      return this.$store.state.bloglist
     }
-    return { bloglist: store.state.blog.list }
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <NavBar />
-    <nuxt />
+    <nuxt :key="$route.fullPath" />
     <SiteFooter />
   </div>
 </template>
