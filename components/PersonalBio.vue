@@ -21,7 +21,7 @@
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .is-horizontal-center {
   justify-content: center;
 }

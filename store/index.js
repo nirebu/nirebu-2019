@@ -20,6 +20,7 @@ export const actions = {
   */
   async nuxtServerInit ({ commit }) {
     const fm = require('front-matter');
+    const moment = require('moment');
     var files = await require.context('~/articles/', false, /\.md$/);
     var posts = files.keys().map( key => {
       var res = files(key);
@@ -28,10 +29,11 @@ export const actions = {
     }).map(post => {
       let attributes = fm(post.default).attributes;
       attributes.slug = post.slug;
+      attributes.ctime = moment(attributes.ctime).format('YYYY-MM-DD')
       return attributes;
     }).sort( (a,b) => {
       return a.ctime < b.ctime;
-    });
+    })
     await commit('set',posts);
   }
 };

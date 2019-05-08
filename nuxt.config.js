@@ -32,40 +32,76 @@ module.exports = {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css",
-        integrity:
-          "sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP",
-        crossorigin: "anonymous"
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Capriola"
-      }
-    ]
+      // {
+      //   rel: "stylesheet",
+      //   type: "text/css",
+      //   href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css",
+      //   integrity:
+      //     "sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP",
+      //   crossorigin: "anonymous"
+      // }
+    ],
+    bodyAttrs : {
+      class: "has-navbar-fixed-top"
+    }
   },
   loading: { color: "#fff" },
   server: {
     host: "0.0.0.0",
     port: 3000
   },
-  css: [ "assets/main.scss" ],
+  css: [
+    "assets/main.scss",
+    "assets/fonts/capriola.css"
+  ],
   plugins: [],
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
-    "@nuxtjs/google-analytics"
+    "@nuxtjs/google-analytics",
+    "@nuxtjs/moment",
+    [
+      "nuxt-fontawesome",
+      {
+        imports: [
+          {
+            set:'@fortawesome/free-brands-svg-icons',
+            icons: ['fab']
+          }
+        ]
+      }
+    ]
   ],
   googleAnalytics: {
     id: "UA-133940660-1"
   },
   build: {
-    extend(config, ctx) {
+    extend(config, {isDev,isClient}) {
       config.module.rules.push({
         test: /\.md$/,
         use: ['raw-loader']
+      });
+      config.module.rules.unshift({
+        test: /\.(png|jpe?g|gif)$/,
+        use: {
+          loader: 'responsive-loader',
+          options: {
+            // disable: isDev,
+            placeholder: true,
+            quality: 80,
+            placeholderSize: 30,
+            name: 'img/[name].[hash:hex:7].[width].[ext]',
+            adapter: require('responsive-loader/sharp')
+          }
+        }
+      })
+      // remove old pattern from the older loader
+      config.module.rules.forEach(value => {
+        if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
+          // reduce to svg and webp, as other images are handled above
+          value.test = /\.(svg|webp)$/
+          // keep the configuration from image-webpack-loader here unchanged
+        }
       });
       config.node = {
         fs: 'empty',

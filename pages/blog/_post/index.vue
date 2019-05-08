@@ -4,7 +4,7 @@
       <div class="columns is-centered">
         <article class="blog column is-9-tablet">
           <header class="title">{{ attributes.title }}</header>
-          <div class="subtitle">Published on <time>{{attributes.ctime}}</time> by {{ attributes.author }}</div>
+          <div class="subtitle">Published on <time>{{require('moment')(attributes.ctime).format('YYYY-MM-DD')}}</time> by {{ attributes.author }}</div>
           <div v-html="content" class="blog-content content"></div>
           <div class="level">
             <nuxt-link to="/blog/" class="level-left">&larr; Back to blog</nuxt-link>

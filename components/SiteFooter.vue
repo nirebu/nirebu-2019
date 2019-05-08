@@ -5,7 +5,7 @@
         <div class="columns fa-lg has-text-centered is-narrow">
           <div class="column" v-for="(social,key) in socials" :key="key">
             <a :href="social.link" target="_blank">
-              <i :class="'fab fa-'+social.icon"></i>
+              <font-awesome-icon :icon="[ 'fab' , social.icon ]" />
             </a>
           </div>
         </div>

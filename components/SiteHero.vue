@@ -9,9 +9,9 @@
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .has-bg-img {
-  background: url("../assets/images/hero2.jpg") center center;
+  background: url("~assets/images/hero2.jpg") center center;
   background-size: cover;
 }
 </style>

@@ -3,22 +3,27 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-9-tablet">
-          <div v-for="(post,key) in bloglist" :key="key" class="card">
-            <div class="card-image">
-              <figure class="image">
-                <nuxt-link :to="post.slug">
-                  <img :src="post.cover_image" :alt="post.cover_image_cp" loading="lazy">
-                </nuxt-link>
-              </figure>
-            </div>
-            <div class="card-content">
+          <article v-for="(post,key) in bloglist" :key="key" class="columns">
+            <div class="column is-4-desktop">
               <nuxt-link :to="post.slug">
-                <p class="title">{{ post.title }}</p>
+                <figure class="image">
+                  <img
+                    :src="require(`~/assets/images/articles/${post.cover_image}?size=640`)"
+                    :alt="post.cover_image_cp" loading="lazy"
+                  />
+                </figure>
               </nuxt-link>
-              <p class="subtitle">{{ post.description }}</p>
-              <p class="subtitle">{{ post.ctime }}</p>
             </div>
-          </div>
+            <div class="column is-8">
+              
+                <p class="title">
+                  <nuxt-link :to="post.slug">{{ post.title }}</nuxt-link>
+                </p>
+                <p class="subtitle">{{ post.description }}</p>
+                <p class="small bottom">Published on {{ post.ctime }}</p>
+              
+            </div>
+          </article>
         </div>
       </div>
     </div>
@@ -26,8 +31,6 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
-
 export default {
   computed: {
     bloglist() {
@@ -36,3 +39,13 @@ export default {
   }
 };
 </script>
+
+<style>
+.preview-image {
+  width: 12vw;
+}
+
+.bottom {
+  margin-top: auto ;
+}
+</style>
