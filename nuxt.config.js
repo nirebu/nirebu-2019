@@ -1,9 +1,9 @@
 //const pkg = require("./package");
-const glob = require('glob')
-let files = glob.sync('**/*.md',{cwd: 'articles'});
+const glob = require("glob");
+let files = glob.sync("**/*.md", { cwd: "articles" });
 
 function getSlugs(post, _) {
-  let slug = post.substr(0, post.lastIndexOf('.'));
+  let slug = post.substr(0, post.lastIndexOf("."));
   return `/blog/${slug}`;
 }
 
@@ -24,25 +24,19 @@ module.exports = {
       {
         hid: "keywords",
         name: "keywords",
-        content: "vuejs, nuxt, javascript, sysadmin, frontend, ansible, mongodb, docker"
+        content:
+          "vuejs, nuxt, javascript, sysadmin, frontend, ansible, mongodb, docker"
       },
       { name: "robots", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@nirebu" }
     ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      // {
-      //   rel: "stylesheet",
-      //   type: "text/css",
-      //   href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css",
-      //   integrity:
-      //     "sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP",
-      //   crossorigin: "anonymous"
-      // }
-    ],
-    bodyAttrs : {
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    bodyAttrs: {
       class: "has-navbar-fixed-top"
+    },
+    htmlAttrs: {
+      lang: "en-GB"
     }
   },
   loading: { color: "#fff" },
@@ -50,10 +44,7 @@ module.exports = {
     host: "0.0.0.0",
     port: 3000
   },
-  css: [
-    "assets/main.scss",
-    "assets/fonts/capriola.css"
-  ],
+  css: ["assets/main.scss", "assets/fonts/capriola.css"],
   plugins: [],
   modules: [
     "@nuxtjs/axios",
@@ -65,8 +56,8 @@ module.exports = {
       {
         imports: [
           {
-            set:'@fortawesome/free-brands-svg-icons',
-            icons: ['fab']
+            set: "@fortawesome/free-brands-svg-icons",
+            icons: ["fab"]
           }
         ]
       }
@@ -76,60 +67,62 @@ module.exports = {
     id: "UA-133940660-1"
   },
   build: {
-    extend(config, {isDev,isClient}) {
+    extend(config, { isDev, isClient }) {
       config.module.rules.push({
         test: /\.md$/,
-        use: ['raw-loader']
+        use: ["raw-loader"]
       });
       config.module.rules.unshift({
         test: /\.(png|jpe?g|gif)$/,
         use: {
-          loader: 'responsive-loader',
+          loader: "responsive-loader",
           options: {
             // disable: isDev,
             placeholder: true,
             quality: 80,
             placeholderSize: 30,
-            name: 'img/[name].[hash:hex:7].[width].[ext]',
-            adapter: require('responsive-loader/sharp')
+            name: "img/[name].[hash:hex:7].[width].[ext]",
+            adapter: require("responsive-loader/sharp")
           }
         }
-      })
+      });
       // remove old pattern from the older loader
       config.module.rules.forEach(value => {
         if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
           // reduce to svg and webp, as other images are handled above
-          value.test = /\.(svg|webp)$/
+          value.test = /\.(svg|webp)$/;
           // keep the configuration from image-webpack-loader here unchanged
         }
       });
       config.node = {
-        fs: 'empty',
-        glob: 'empty'
+        fs: "empty",
+        glob: "empty"
       };
     }
   },
   router: {
     scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
-        return savedPosition
+        return savedPosition;
       } else {
-        let position = {}
+        let position = {};
         if (to.matched.length < 2) {
-          position = { x: 0, y: 0 }
-        } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
-          position = { x: 0, y: 0 }
+          position = { x: 0, y: 0 };
+        } else if (
+          to.matched.some(r => r.components.default.options.scrollToTop)
+        ) {
+          position = { x: 0, y: 0 };
         }
         if (to.hash) {
-          position = { selector: to.hash }
+          position = { selector: to.hash };
         }
-        return position
+        return position;
       }
     }
   },
   generate: {
     routes: function() {
-      return files.map(getSlugs)
+      return files.map(getSlugs);
     }
   }
 };

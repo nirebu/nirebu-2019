@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const mutations = {
   set(state,list) {
-    state.bloglist = list
+    state.bloglist = list;
   }
 };
 
