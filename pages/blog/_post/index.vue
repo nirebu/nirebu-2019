@@ -4,7 +4,11 @@
       <div class="columns is-centered">
         <article class="blog column is-9-tablet">
           <header class="title">{{ attributes.title }}</header>
-          <div class="subtitle">Published on <time>{{require('moment')(attributes.ctime).format('YYYY-MM-DD')}}</time> by {{ attributes.author }}</div>
+          <div class="subtitle">
+            Published on
+            <time>{{require('moment')(attributes.ctime).format('YYYY-MM-DD')}}</time>
+            by {{ attributes.author }}
+          </div>
           <div v-html="content" class="blog-content content"></div>
           <div class="level">
             <nuxt-link to="/blog/" class="level-left">&larr; Back to blog</nuxt-link>
@@ -20,7 +24,7 @@ const fm = require("front-matter");
 const md = require("markdown-it")({
   html: true,
   typographer: true
-}).use(require('markdown-it-highlightjs'),{auto:true});
+}).use(require("markdown-it-highlightjs"), { auto: true });
 
 export default {
   async asyncData({ params }) {
@@ -33,11 +37,15 @@ export default {
   },
   head() {
     return {
-      title:  this.attributes.title,
+      title: this.attributes.title,
       meta: [
-        { hid: 'description' , name: 'description' , content: this.attributes.description }
+        {
+          hid: "description",
+          name: "description",
+          content: this.attributes.description
+        }
       ]
-    }
+    };
   }
 };
 </script>
@@ -52,7 +60,7 @@ export default {
 }
 
 .blog-content >>> h1 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 </style>
 

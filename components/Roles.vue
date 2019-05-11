@@ -6,7 +6,7 @@
           <div class="columns is-centered">
             <div class="column role">
               <h1 class="title nirebu-title has-background-gradient">#! /SysAdmin</h1>
-              <p class="list-title has-text-primary has-text-weight-normal">Things I work on:</p>
+              <p class="list-title has-text-primary has-text-weight-normal">Things I work with:</p>
               <ul>
                 <li>postfix</li>
                 <li>mongoDB</li>
@@ -23,7 +23,7 @@
                 <li>Reactive frontends with Vuejs</li>
                 <li>JAMStack</li>
                 <li>Bulma CSS framework</li>
-                <li>Markdown</li>
+                <li>Webpack</li>
               </ul>
             </div>
           </div>

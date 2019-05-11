@@ -1,8 +1,9 @@
 <template>
   <div>
-    <SiteHero />
-    <PersonalBio />
-    <Roles />
+    <SiteHero/>
+    <ArticleList :isPaginated="false" :postsPerPage="2"/>
+    <PersonalBio/>
+    <Roles/>
   </div>
 </template>
 
@@ -10,19 +11,18 @@
 import PersonalBio from "~/components/PersonalBio";
 import Roles from "~/components/Roles";
 import SiteHero from "~/components/SiteHero";
-import LatestArticles from "~/components/LatestArticles";
+import ArticleList from "~/components/ArticleList";
 
 export default {
   components: {
     PersonalBio,
     Roles,
     SiteHero,
-    LatestArticles
+    ArticleList
   }
-}
+};
 </script>
 
 
 <style>
-
 </style>
