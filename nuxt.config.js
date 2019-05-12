@@ -27,7 +27,7 @@ module.exports = {
         content:
           "vuejs, nuxt, javascript, sysadmin, frontend, ansible, mongodb, docker"
       },
-      { name: "robots", content: "index, follow" },
+      { name: "robots", hid: "robots" , content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@nirebu" }
     ],

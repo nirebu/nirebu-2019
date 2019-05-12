@@ -4,7 +4,7 @@
       <div class="column is-one-fifth">
         <div class="columns fa-lg has-text-centered is-narrow">
           <div class="column" v-for="(social,key) in socials" :key="key">
-            <a :href="social.link" target="_blank">
+            <a :href="social.link" target="_blank" :aria-label="social.label" rel="noopener">
               <font-awesome-icon :icon="[ 'fab' , social.icon ]" />
             </a>
           </div>
@@ -23,10 +23,10 @@ export default {
   data() {
     return {
       socials: [
-        { link: "https://github.com/nirebu", icon: "github" },
-        { link: "https://linkedin.com/in/nicolo-rebughini", icon: "linkedin" },
-        { link: "https://facebook.com/nicolo.rebughini", icon: "facebook" },
-        { link: "https://instagram.com/nirebu", icon: "instagram" }
+        { link: "https://github.com/nirebu", icon: "github" , label: "Check my Github profile" },
+        { link: "https://linkedin.com/in/nicolo-rebughini", icon: "linkedin" , label: "Fine me on Linkedin" },
+        { link: "https://facebook.com/nicolo.rebughini", icon: "facebook" , label: "Find me on Facebook" },
+        { link: "https://instagram.com/nirebu", icon: "instagram" , label: "Follow me on Instagram" }
       ]
     };
   }
