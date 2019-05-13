@@ -70,7 +70,7 @@ To take advantage of the intrinsic modularisation of Nuxt, I split the navbar an
 
 After this, my `layouts/default.vue` file looks like this:
 
-```vue
+```html
 <template>
   <div class="main">
     <NavBar />
@@ -123,7 +123,7 @@ module.exports = {
 
 In the `pages/blog/_post/index.vue` file is where the magic happens (at least for me). Given the fact that `markdownit` doesn't support reading the markdown metadata, where the article info is stored, we need to decouple the process of getting the content and the attributes (as are called by front-matter):
 
-```vue
+```html
 <script>
 // Let's require the needed modules
 const fm = require("front-matter");
@@ -155,7 +155,7 @@ export default {
 
 With this data filled up, we can populate some elements:
 
-```vue
+```html
 <template>
   <div :key="$route.params.post">
     <div class="container">

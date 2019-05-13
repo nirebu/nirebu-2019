@@ -1,15 +1,21 @@
 <template>
   <section :key="$route.params.post" class="section">
     <div class="container">
-      <div class="columns is-centered">
-        <article class="blog column is-9-tablet">
-          <header class="title">{{ attributes.title }}</header>
-          <div class="subtitle">
-            Published on
-            <time>{{require('moment')(attributes.ctime).format('YYYY-MM-DD')}}</time>
-            by {{ attributes.author }}
-          </div>
-          <div v-html="content" class="blog-content content"></div>
+      <div class="is-centered">
+        <header class="columns">
+            <div class="title-wrapper column is-6-desktop">
+              <div class="subtitle">
+                <time>{{require('moment')(attributes.ctime).format('Do MMM YYYY')}}</time>
+              </div>
+              <div class="title">{{ attributes.title }}</div>
+              <div class="subtitle">{{ attributes.description }}</div>
+            </div>
+            <figure class="image column is-6-desktop">
+              <img :src="require(`~/assets/images/articles/${attributes.cover_image}`)" :alt="attributes.cover_image_cp" loading="lazy"/>
+            </figure>
+          </header>
+        <article class="blog columns content">
+          <div v-html="content" class="blog-content is-8-tablet"></div>
           <div class="level">
             <nuxt-link to="/blog/" class="level-left">&larr; Back to blog</nuxt-link>
           </div>
@@ -52,7 +58,11 @@ export default {
 
 <style scoped>
 .blog {
-  margin: 2em;
+  margin: 1em;
+}
+
+.blog header {
+  margin-bottom: 1em;
 }
 
 .blog .subtitle {
