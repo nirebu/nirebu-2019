@@ -1,25 +1,25 @@
 <template>
   <section :key="$route.params.post" class="section">
     <div class="container">
-      <div class="is-centered">
-        <header class="columns">
-            <div class="title-wrapper column is-6-desktop">
-              <div class="subtitle">
-                <time>{{require('moment')(attributes.ctime).format('Do MMM YYYY')}}</time>
-              </div>
-              <div class="title">{{ attributes.title }}</div>
-              <div class="subtitle">{{ attributes.description }}</div>
-            </div>
-            <figure class="image column is-6-desktop">
+      <div class="is-centered columns">
+        <div class="column is-9 is-desktop content">
+          <header>
+            <h1>{{ attributes.title }}</h1>
+            <blockquote>{{ attributes.description }}</blockquote>
+            <p class="time-wrapper">
+              Published on <time>{{require('moment')(attributes.ctime).format('Do MMM YYYY')}}</time>
+            </p>
+            <figure v-if="attributes.cover_image" class="image">
               <img :src="require(`~/assets/images/articles/${attributes.cover_image}`)" :alt="attributes.cover_image_cp" loading="lazy"/>
             </figure>
           </header>
-        <article class="blog columns content">
-          <div v-html="content" class="blog-content is-8-tablet"></div>
+          <article>
+            <div v-html="content"></div>
+          </article>
           <div class="level">
             <nuxt-link to="/blog/" class="level-left">&larr; Back to blog</nuxt-link>
           </div>
-        </article>
+        </div>
       </div>
     </div>
   </section>
@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .blog {
-  margin: 1em;
+  padding: 1em;
 }
 
 .blog header {
@@ -71,6 +71,10 @@ export default {
 
 .blog-content >>> h1 {
   font-size: 1.5rem;
+}
+
+blockquote {
+  margin-bottom: 1em;
 }
 </style>
 

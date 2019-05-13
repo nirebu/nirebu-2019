@@ -10,6 +10,7 @@ $link-hover:#940DFF;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  overflow: visible;
 }
 
 .has-background-gradient {
@@ -26,4 +27,13 @@ $link-hover:#940DFF;
   flex: 1;
 }
 
+blockquote {
+  font-style: italic;
+}
+
 @import "~bulma/bulma.sass";
+
+.time-wrapper {
+  margin-bottom: 1em;
+  color: $grey-light;
+}

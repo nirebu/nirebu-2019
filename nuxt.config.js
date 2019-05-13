@@ -52,6 +52,13 @@ module.exports = {
     "@nuxtjs/google-analytics",
     "@nuxtjs/moment",
     [
+      "@nuxtjs/sitemap",
+      {
+        hostname: 'https://nirebu.com',
+        gzip: true,
+      }
+    ],
+    [
       "nuxt-fontawesome",
       {
         imports: [

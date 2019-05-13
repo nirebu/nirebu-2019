@@ -3,10 +3,10 @@ title: Building a static blog with NuxtJs and Markdown as a beginner
 published: true
 description: A summary of my ongoing journey to get a statically generated blog up and running with the help of NuxtJS and Markdown
 tags: javascript,vue,showdev,beginners
-cover_image: jamstack.jpg
-cover_image_cp: Photo by Jonathan Pielmayer on Unsplash
-ctime: 2019-05-02
+ctime: 2019-05-12
 ---
+
+> This post originally appeared on [Dev.to](https://dev.to/nirebu/building-a-static-blog-with-nuxtjs-and-markdown-as-a-beginner-pkf) when this site had yet to support functional blogging
 
 Hi there, this is my first post here... or anywhere since I've never blogged before! I'm [Nicolò Rebughini](https://nirebu.com/), a sysadmin trying to get a hold of modern web development pratices. I've specialised in CS at high school, but had been a video post production tech for many years, and came back to the IT world a little more than a year ago wearing the sysadmin hat. Right now I'm updating myself and learning to use tools like [Ansible](https://ansible.com/) and [Docker](https://docker.com/) to standardise and streamline the stack of my workplace.
 
@@ -228,5 +228,3 @@ The command `npm run generate` will get us the `build` directory containing our 
 From this guide, and from my website, are missing **crucial** parts that I'm going to implement, like using Vuex to store all the blog posts metadata and using that info to render a list of articles. Right now I can only write single blog posts and link them somewhere. Expect an update or a new post about those also!
 
 Thanks for reading!
-
-Cover photo by Jonathan Pielmayer on [Unsplash](https://unsplash.com) // This post will appear also on my blog, when it will be somewhat functional.

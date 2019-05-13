@@ -2,12 +2,14 @@
   <section class="section">
     <div class="container">
       <div class="columns is-centered">
-        <div class="column is-9-desktop">
-          <header class="title nirebu-title has-background-gradient has-text-centered">
-            Blog
+        <div class="column is-10-tablet is-9-desktop">
+          <header class="title has-text-centered">
+            <div class="nirebu-title has-background-gradient">
+              Latest blog posts
+            </div>
           </header>
           <article v-for="(post,key) in bloglist" :key="key" class="columns is-centered">
-            <div class="column is-3-desktop">
+            <div v-if="post.cover_image" class="column is-3-desktop">
               <nuxt-link :to="`/blog/${post.slug}`">
                 <figure class="image">
                   <img
@@ -18,15 +20,17 @@
                 </figure>
               </nuxt-link>
             </div>
-            <div class="column is-7-desktop">
+            <div class="column">
               <p class="title">
                 <nuxt-link :to="`/blog/${post.slug}`">{{ post.title }}</nuxt-link>
               </p>
               <p class="subtitle">{{ post.description }}</p>
-              <p class="small">Published on {{ post.ctime }}</p>
-              <p class="subtitle">
-                <nuxt-link :to="`/blog/${post.slug}`">Keep reading &rarr;</nuxt-link>
-              </p>
+              <div class="level">
+                <p class="small level-left">Published on {{ post.ctime }}</p>
+                <p class="subtitle level-right">
+                  <nuxt-link :to="`/blog/${post.slug}`">Keep reading &rarr;</nuxt-link>
+                </p>
+              </div>
             </div>
           </article>
         </div>
@@ -56,8 +60,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .preview-image {
   width: 12vw;
+}
+
+.nirebu-title {
+  padding: 0.25em 0 0.25em;
 }
 </style>
