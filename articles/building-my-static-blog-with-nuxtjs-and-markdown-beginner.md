@@ -80,8 +80,8 @@ After this, my `layouts/default.vue` file looks like this:
 </template>
 
 <script>
-import NavBar from '../components/NavBar';
-import SiteFooter from '../components/SiteFooter';
+import NavBar from '~/components/NavBar';
+import SiteFooter from '~/components/SiteFooter';
 
 export default {
   components:{
