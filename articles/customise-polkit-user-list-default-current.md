@@ -42,3 +42,13 @@ polkit.addAdminRule(function(action, subject) {
     }
 });
 ```
+
+This effectively reduces the list of selectable users to only the current user, only if they're present in the `wheel` group.
+
+```bash
+nrebughini@host $ poweroff
+please insert password for user nrebughini:
+
+```
+
+Much cleaner and I'm not exposing every admin account on the system, nor encouraging bad practices to use other people's passwords.
