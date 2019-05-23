@@ -1,7 +1,7 @@
 ---
 title: How to make polkit default to the currently logged in user
 published: true
-description: Change the default behaviour of polkit to not list all the admin users when commands need root elevation
+description: Change the default behaviour of polkit in order to not list all the admin users when commands need root elevation
 tags: polkit,javascript,permissions,centos
 ctime: 2019-05-24
 ---
@@ -14,11 +14,15 @@ If it happens that on that particular systems there are multiple users in the `w
 
 ```bash
 nrebughini@host $ poweroff
-polkit bla bla
-( ) admin1
-( ) admin2
-( ) nrebughini # Polkit, Y U NO make this the default one at least?
-( ) admin3
+==== AUTHENTICATING FOR org.freedesktop.login1.power-off ===
+Authentication is required for powering off the system.
+Multiple identities can be used for authentication:
+ 1.  admin1
+ 2.  admin2
+ 3.  admin3
+ 4.  nrebughini # Polkit, Y U NO make this the default one at least?
+ 5.  admin5
+Choose identity to authenticate as (1-5):
 ```
 
 ## The solution
@@ -47,8 +51,10 @@ This effectively reduces the list of selectable users to only the current user, 
 
 ```bash
 nrebughini@host $ poweroff
-please insert password for user nrebughini:
-
+==== AUTHENTICATING FOR org.freedesktop.login1.power-off ===
+Authentication is required for powering off the system.
+Authenticating as: Nicolò Rebughini (nrebughini)
+Password:
 ```
 
 Much cleaner and I'm not exposing every admin account on the system, nor encouraging bad practices to use other people's passwords.
