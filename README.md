@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cbde63aa-755a-4e12-a1a3-407beeaffe5c/deploy-status)](https://app.netlify.com/sites/nirebu/deploys)
 
-> Personal website for Nicolò Rebughini
+> Personal website for Nicolò Rebughini. See it in action here https://nirebu.com
 
 A little place to fool around with new things and post some ramblings in a blog
 
