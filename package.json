@@ -35,7 +35,7 @@
     "jimp": "^0.6.4",
     "markdown-it-highlightjs": "^3.0.0",
     "node-sass": "^4.12.0",
-    "nodemon": "^1.19.0",
+    "nodemon": "^1.19.1",
     "nuxt-fontawesome": "^0.4.0",
     "responsive-loader": "^1.2.0",
     "sass-loader": "^7.1.0",
