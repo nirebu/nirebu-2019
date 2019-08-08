@@ -27,7 +27,7 @@
     "@nuxtjs/markdownit-loader": "^1.1.1",
     "@nuxtjs/moment": "^1.2.0",
     "@nuxtjs/sitemap": "^1.2.0",
-    "@nuxtjs/style-resources": "^0.1.2",
+    "@nuxtjs/style-resources": "^1.0.0",
     "bulma": "^0.7.4",
     "frontmatter-markdown-loader": "^1.6.0",
     "fs": "0.0.1-security",
