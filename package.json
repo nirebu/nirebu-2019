@@ -14,12 +14,12 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.7.1",
+    "nuxt": "^2.8.1",
     "prismic-javascript": "^2.0.3",
     "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/fontawesome-svg-core": "^1.2.20",
     "@fortawesome/free-brands-svg-icons": "^5.8.2",
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "@nuxtjs/google-analytics": "^2.2.0",
@@ -35,10 +35,10 @@
     "jimp": "^0.6.4",
     "markdown-it-highlightjs": "^3.0.0",
     "node-sass": "^4.12.0",
-    "nodemon": "^1.19.0",
+    "nodemon": "^1.19.1",
     "nuxt-fontawesome": "^0.4.0",
     "responsive-loader": "^1.2.0",
     "sass-loader": "^7.1.0",
-    "sharp": "^0.22.1"
+    "sharp": "^0.23.0"
   }
 }
