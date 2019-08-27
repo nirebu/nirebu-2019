@@ -1,7 +1,9 @@
 <template>
-  <div class="main">
+  <div>
     <NavBar />
-    <nuxt :key="$route.fullPath" />
+    <div class="max-w-4xl mx-auto px-12 lg:px-0">
+      <nuxt :key="$route.fullPath" />
+    </div>
     <SiteFooter />
   </div>
 </template>
@@ -17,8 +19,3 @@ export default {
   }
 }
 </script>
-
-
-<style>
-
-</style>

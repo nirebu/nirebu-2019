@@ -1,5 +1,6 @@
 //const pkg = require("./package");
 const glob = require("glob");
+const path = require("path");
 let files = glob.sync("**/*.md", { cwd: "articles" });
 
 function getSlugs(post, _) {
@@ -25,7 +26,7 @@ module.exports = {
         hid: "keywords",
         name: "keywords",
         content:
-          "vuejs, nuxt, javascript, sysadmin, frontend, ansible, mongodb, docker"
+          "vuejs, nuxt, javascript, sysadmin, frontend, ansible, mongodb, docker, postfix"
       },
       { name: "robots", hid: "robots" , content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -44,7 +45,7 @@ module.exports = {
     host: "0.0.0.0",
     port: 3000
   },
-  css: ["assets/main.scss", "assets/fonts/capriola.css"],
+  css: ["~assets/tailwind.scss"],
   plugins: [],
   modules: [
     "@nuxtjs/axios",
@@ -74,6 +75,11 @@ module.exports = {
     id: "UA-133940660-1"
   },
   build: {
+    postcss: {
+      plugins: {
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js')
+      }
+    },
     extend(config, { isDev, isClient }) {
       config.module.rules.push({
         test: /\.md$/,

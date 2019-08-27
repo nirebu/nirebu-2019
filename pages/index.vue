@@ -1,7 +1,7 @@
 <template>
   <div>
     <SiteHero/>
-    <ArticleList :isPaginated="false" :postsPerPage="2"/>
+    <ArticleList class="mt-8" :isPaginated="false" :postsPerPage="2"/>
     <PersonalBio/>
     <Roles/>
   </div>
@@ -16,7 +16,6 @@ import ArticleList from "~/components/ArticleList";
 export default {
   components: {
     PersonalBio,
-    Roles,
     SiteHero,
     ArticleList
   }
