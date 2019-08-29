@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.9.1",
+    "nuxt": "^2.9.2",
     "prismic-javascript": "^2.0.3",
     "vue-template-compiler": "^2.6.10"
   },

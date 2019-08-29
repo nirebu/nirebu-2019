@@ -11,8 +11,8 @@ function getSlugs(post, _) {
 module.exports = {
   mode: "universal",
   head: {
-    title: "Nicolò Rebughini | Sysadmin // Webdev",
-    titleTemplate: "%s - Nicolò Rebughini | Sysadmin // Webdev",
+    title: "Nicolò Rebughini",
+    titleTemplate: "%s - Nicolò Rebughini",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -34,13 +34,13 @@ module.exports = {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     bodyAttrs: {
-      class: "has-navbar-fixed-top"
+      class: ""
     },
     htmlAttrs: {
       lang: "en-GB"
     }
   },
-  loading: { color: "#fff" },
+  loading: false,
   server: {
     host: "0.0.0.0",
     port: 3000
@@ -48,8 +48,6 @@ module.exports = {
   css: ["~assets/tailwind.scss"],
   plugins: [],
   modules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/style-resources",
     "@nuxtjs/google-analytics",
     "@nuxtjs/moment",
     [
@@ -85,52 +83,6 @@ module.exports = {
         test: /\.md$/,
         use: ["raw-loader"]
       });
-      config.module.rules.unshift({
-        test: /\.(png|jpe?g|gif)$/,
-        use: {
-          loader: "responsive-loader",
-          options: {
-            // disable: isDev,
-            placeholder: true,
-            quality: 80,
-            placeholderSize: 30,
-            name: "img/[name].[hash:hex:7].[width].[ext]",
-            adapter: require("responsive-loader/sharp")
-          }
-        }
-      });
-      // remove old pattern from the older loader
-      config.module.rules.forEach(value => {
-        if (String(value.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-          // reduce to svg and webp, as other images are handled above
-          value.test = /\.(svg|webp)$/;
-          // keep the configuration from image-webpack-loader here unchanged
-        }
-      });
-      config.node = {
-        fs: "empty",
-        glob: "empty"
-      };
-    }
-  },
-  router: {
-    scrollBehavior(to, from, savedPosition) {
-      if (savedPosition) {
-        return savedPosition;
-      } else {
-        let position = {};
-        if (to.matched.length < 2) {
-          position = { x: 0, y: 0 };
-        } else if (
-          to.matched.some(r => r.components.default.options.scrollToTop)
-        ) {
-          position = { x: 0, y: 0 };
-        }
-        if (to.hash) {
-          position = { selector: to.hash };
-        }
-        return position;
-      }
     }
   },
   generate: {
