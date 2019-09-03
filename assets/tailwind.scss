@@ -5,9 +5,15 @@
 @tailwind utilities;
 
 .markdown {
-  @apply text-lg text-gray-800 leading-normal;
-  & > * + *,  & li + li, & li > p + p {
+  @apply text-gray-800 leading-normal mb-4;
+  & > * + *, & li > p + p {
     @apply mt-6;
+  }
+  & p + p {
+    @apply mt-2;
+  }
+  & li + li {
+    @apply mt-2;
   }
   & strong {
     @apply text-black font-bold;
@@ -19,24 +25,26 @@
     @apply font-bold;
   }
   & h2 {
-    @apply leading-tight text-xl font-bold text-black mb-2 mt-10;
+    @apply leading-tight text-xl font-bold text-black mb-2 mt-8;
   }
   & h3 {
     @apply leading-tight text-lg font-bold text-black mt-8 -mb-2;
   }
   & code {
-    @apply font-mono text-sm inline bg-gray-400 px-1;
+    @apply font-mono text-sm inline bg-gray-200 px-1;
   }
   & pre code {
-    @apply block bg-black p-4 rounded;
+    @apply block bg-gray-100 p-4 rounded my-4;
   }
   & blockquote {
-    @apply border-l-4 border-gray-500 pl-4 italic;
+    @apply border-l-4 border-gray-500 bg-gray-100 p-3 pl-4 my-4 italic;
   }
   & ul, & ol {
-    @apply pl-5;
+    @apply pl-5 my-2 list-disc;
     @screen sm {
       @apply pl-10;
     }
   }
 }
+
+@import './codeStyles.scss'
