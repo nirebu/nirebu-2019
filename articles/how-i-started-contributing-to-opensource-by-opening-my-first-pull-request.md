@@ -6,8 +6,6 @@ tags: opensource,github,beginners,vue
 ctime: 2019-08-18
 ---
 
-and it was easier than expected. Like, really damn easier than expected.
-
 ## The problem
 
 I wanted to build a *zero-or-almost-zero-config* documentation system to use at our office to move away from a hell of ODT, PDF files scattered around a file server. You know what I'm talking about 😁
