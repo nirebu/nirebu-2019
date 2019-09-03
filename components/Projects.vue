@@ -5,18 +5,20 @@
 		</h2>
 		<article
 			v-for="(project,key) in projects" :key="key"
-			class="p-3 flex items-center"
+			class="p-3"
 		>
-			<h3 class="text-lg w-32 flex-shrink-0 font-semibold text-gray-700">
-				{{ project.title }}
-			</h3>
-			<p class="flex-grow text-gray-600 mr-12">
+			<div class="flex items-center">
+				<h3 class="text-2xl font-semibold text-gray-700">
+					{{ project.title }}
+				</h3>
+				<div class="inline-flex md:mt-0">
+					<a :href="project.repo" v-if="project.repo" class="w-16 ml-2 hover:bg-purple-700 text-center bg-purple-600 rounded py-1 px-2 text-white">Source</a>
+					<a :href="project.home" v-if="project.home" class="w-16 ml-2 hover:bg-purple-700 text-center bg-purple-600 rounded py-1 px-2 text-white">Visit</a>
+				</div>
+			</div>
+			<p class="block text-gray-600 mt-1 md:m-0 md:mr-12 md:flex-grow">
 				{{ project.description }}
 			</p>
-			<div class="flex">
-				<a :href="project.repo" v-if="project.repo" class="w-16 hover:bg-purple-700 text-center bg-purple-600 rounded py-1 px-2 text-white text-sm" :class="project.repo && project.home ? 'mr-2' : ''">Source</a>
-				<a :href="project.home" v-if="project.home" class="w-16 hover:bg-purple-700 text-center bg-purple-600 rounded py-1 px-2 text-white text-sm">Visit</a>
-			</div>
 		</article>
 	</section>
 </template>
