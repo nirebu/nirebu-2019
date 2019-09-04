@@ -36,12 +36,12 @@ export default {
 				},
 				{
 					title: "Naos QG" ,
-					description: "A little Vue.js frontend interfacing via websockets to the Mionix Naos QG",
+					description: "A hacked together Vue.js frontend interfacing via websockets to the Mionix Naos Quantified Gaming mouse",
 					repo: "https://github.com/nirebu/naos-quantified-gaming"
 				},
 				{
 					title: "Stackrep",
-					description: "A service to monitor IP and domain reputation over time",
+					description: "Keep your domain and IP reputations monitored over time",
 					home: "https://stackrep.com"
 				},
 				{

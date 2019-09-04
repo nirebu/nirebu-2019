@@ -8,8 +8,8 @@
       </div>
     </div>
     <div class="mt-2 text-sm text-gray-600">
-      <p><a class="font-semibold text-gray-700" href="https://github.com/nirebu/nirebu-2019">Coded by</a> Nicol&ograve; Rebughini with <a class="font-semibold text-gray-700" href="https://vuejs.org/">Vuejs</a> + <a class="font-semibold text-gray-700" href="https://nuxtjs.org/">Nuxtjs</a></p>
-      <p>Hosted on <a class="font-semibold text-gray-700" href="https://netlify.com">Netlify</a></p>
+      <p><a class="font-semibold text-gray-700 hover:underline" href="https://github.com/nirebu/nirebu-2019">Coded by</a> Nicol&ograve; Rebughini with <a rel="noopener" class="font-semibold hover:underline text-gray-700" href="https://nuxtjs.org/">Nuxtjs</a> + <a class="font-semibold hover:underline text-gray-700" rel="noopener" href="https://tailwindcss.com/">Tailwind CSS</a></p>
+      <p>Hosted on <a class="font-semibold hover:underline text-gray-700" href="https://netlify.com">Netlify</a></p>
     </div>
   </footer>
 </template>

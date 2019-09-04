@@ -20,10 +20,11 @@
           </figure>
       </div>
       <div>
-        <h4 class="text-xl font-normal text-purple-500 pb-1">
+        <h4 class="text-xl font-normal text-purple-500">
           {{ post.title }}
         </h4>
-        <p class="text-sm text-gray-600">{{ post.description }}</p>
+        <p class="mt-1 text-sm text-gray-600">{{ post.description }}</p>
+        <p class="mt-1 text-sm text-gray-500">Published on {{ post.ctime }}</p>
       </div>
       </nuxt-link>
     </article>

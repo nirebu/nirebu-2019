@@ -20,22 +20,27 @@ module.exports = {
         hid: "description",
         name: "description",
         content:
-          "Hi, I'm Nicolò, a Linux system administrator focusing on email deliverability, system standardisation, deployment automation and containerisation."
+          "I'm an email deliverability tech. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches."
       },
       {
         hid: "keywords",
         name: "keywords",
         content:
-          "vuejs, nuxt, javascript, sysadmin, frontend, ansible, mongodb, docker, postfix"
+          "vuejs, nuxt, sysadmin, backend, ansible, mongodb, docker, postfix, tailwindcss, tailwind, devops"
       },
       { name: "robots", hid: "robots" , content: "index, follow" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@nirebu" }
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@nirebu" },
+      { name: "twitter:url", content: "https://nirebu.com" },
+      { name: "twitter:description", content: "I'm an email deliverability tech. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches" },
+
+      { name: "og:url", content: "https://nirebu.com" },
+      { name: "og:locale", content: "en_GB" },
+      { name: "og:description", content: "I'm an email deliverability tech. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches." },
+      { name: "og:title", content: "Nicolò Rebughini - Devops" },
+      { name: "og:type", content: "website" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    bodyAttrs: {
-      class: ""
-    },
     htmlAttrs: {
       lang: "en-GB"
     }

@@ -5,7 +5,7 @@
         <h3 class="font-bold text-4xl text-gray-800">{{ attributes.title }}</h3>
         <blockquote class="border-l-4 border-gray-500 bg-gray-100 p-3 pl-4 my-4 italic">{{ attributes.description }}</blockquote>
         <p class="text-sm text-gray-500">
-          Published on <time>{{require('moment')(attributes.ctime).format('Do MMM YYYY')}}</time>
+          Published on <time>{{require('moment')(attributes.ctime).format('YYYY/MM/DD')}}</time>
         </p>
         <figure v-if="attributes.cover_image">
           <img :src="require(`~/assets/images/articles/${attributes.cover_image}`)" :alt="attributes.cover_image_cp" loading="lazy"/>
@@ -15,7 +15,7 @@
         <div class="mt-2" v-html="content"></div>
       </article>
       <div>
-        <nuxt-link to="/blog/">&larr; Back to blog</nuxt-link>
+        <nuxt-link class="font-bold text-purple-500" to="/blog/">Back to blog</nuxt-link>
       </div>
     </div>
   </section>
