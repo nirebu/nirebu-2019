@@ -35,6 +35,7 @@
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "nuxt-fontawesome": "^0.4.0",
+    "nuxt-purgecss": "^0.2.1",
     "responsive-loader": "^1.2.0",
     "sass-loader": "^7.1.0",
     "sharp": "^0.23.0",
