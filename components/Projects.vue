@@ -12,8 +12,8 @@
 					{{ project.title }}
 				</h3>
 				<div class="inline-flex md:mt-0">
-					<a target="_blank" :href="project.repo" v-if="project.repo" class="w-16 ml-2 hover:bg-purple-700 text-center bg-purple-600 rounded py-1 px-2 text-white">Source</a>
-					<a target="_blank" :href="project.home" v-if="project.home" class="w-16 ml-2 hover:bg-purple-700 text-center bg-purple-600 rounded py-1 px-2 text-white">Visit</a>
+					<a target="_blank" rel="noopener" :href="project.repo" v-if="project.repo" class="w-16 ml-2 hover:bg-purple-700 text-center bg-purple-600 rounded py-1 px-2 text-white">Source</a>
+					<a target="_blank" rel="noopener" :href="project.home" v-if="project.home" class="w-16 ml-2 hover:bg-purple-700 text-center bg-purple-600 rounded py-1 px-2 text-white">Visit</a>
 				</div>
 			</div>
 			<p class="block text-gray-700 mt-1 md:m-0 md:mr-12 md:flex-grow">
