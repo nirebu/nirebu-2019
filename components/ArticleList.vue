@@ -10,7 +10,6 @@
     >
       <nuxt-link :to="`/blog/${post.slug}`">
       <div v-if="post.cover_image">
-        
           <figure>
             <img
               :src="require(`~/assets/images/articles/${post.cover_image}?size=640`)"
@@ -20,11 +19,11 @@
           </figure>
       </div>
       <div>
-        <h4 class="text-xl font-normal text-purple-500">
+        <h4 class="text-xl font-normal text-purple-600">
           {{ post.title }}
         </h4>
-        <p class="mt-1 text-sm text-gray-600">{{ post.description }}</p>
-        <p class="mt-1 text-sm text-gray-500">Published on {{ post.ctime }}</p>
+        <p class="mt-1 text-sm text-gray-700">{{ post.description }}</p>
+        <p class="mt-1 text-sm text-gray-600">Published on {{ post.ctime }}</p>
       </div>
       </nuxt-link>
     </article>

@@ -53,7 +53,6 @@ module.exports = {
   css: ["~assets/tailwind.scss"],
   plugins: [],
   modules: [
-    "nuxt-purgecss",
     "@nuxtjs/google-analytics",
     "@nuxtjs/moment",
     [
@@ -84,7 +83,6 @@ module.exports = {
         tailwindcss: path.resolve(__dirname, './tailwind.config.js')
       }
     },
-    extractCSS: true,
     extend(config, { isDev, isClient }) {
       config.module.rules.push({
         test: /\.md$/,
