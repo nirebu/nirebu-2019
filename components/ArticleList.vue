@@ -1,11 +1,11 @@
 <template>
   <section>
-    <h3 class="font-bold text-4xl text-gray-800 px-3">
+    <h3 class="font-bold text-3xl lg:text-4xl text-gray-800 px-3">
       Latest posts
     </h3>
     <article
       v-for="(post,key) in bloglist" :key="key"
-      class="py-2 px-3 rounded hover:bg-gray-200"
+      class="py-2 px-3 rounded-lg hover:bg-gray-200 hover:shadow-inner"
       :class="key == bloglist.length -1 ? '' : 'mb-1'"
     >
       <nuxt-link :to="`/blog/${post.slug}`">
@@ -31,7 +31,6 @@
       v-if="$store.state.bloglist.length > postsPerPage && !isPaginated"
       class="px-3"
     >
-      leggi tutti
     </div>
   </section>
 </template>

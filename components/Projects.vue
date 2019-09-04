@@ -1,6 +1,6 @@
 <template>
 	<section>
-		<h2 class="font-bold text-4xl text-gray-800 px-3 mb-3">
+		<h2 class="font-bold text-3xl lg:text-4xl text-gray-800 px-3 mb-3">
 			My projects
 		</h2>
 		<article
@@ -37,7 +37,7 @@ export default {
 				{
 					title: "Naos QG" ,
 					description: "A little Vue.js frontend interfacing via websockets to the Mionix Naos QG",
-					repo: "https://github.com/nirebu/piwol-server"
+					repo: "https://github.com/nirebu/naos-quantified-gaming"
 				},
 				{
 					title: "Stackrep",
@@ -47,7 +47,7 @@ export default {
 				{
 					title: "Nirebu.com",
 					description: "Check the source code and how my personal website is built",
-					home: "https://stackrep.com"
+					repo: "https://github.com/nirebu/nirebu-2019"
 				},
 			]
 		}
