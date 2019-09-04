@@ -1,8 +1,10 @@
 <template>
-  <div class="main">
+  <div class="flex flex-col min-h-screen">
     <NavBar />
-    <nuxt :key="$route.fullPath" />
-    <SiteFooter />
+    <div class="max-w-4xl mx-auto px-12 lg:px-0 flex-grow lg:container">
+      <nuxt />
+    </div>
+    <SiteFooter class="mt-6" />
   </div>
 </template>
 
@@ -17,8 +19,3 @@ export default {
   }
 }
 </script>
-
-
-<style>
-
-</style>

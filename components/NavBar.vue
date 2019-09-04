@@ -1,24 +1,7 @@
 <template>
-  <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <div class="navbar-item">
-        <div class="title nirebu-title has-background-gradient">
-          <nuxt-link to="/">#! /nirebu</nuxt-link>
-        </div>
-      </div>
-      <div class="navbar-burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-      <div class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <nuxt-link class="button is-primary" to="/blog/">Blog</nuxt-link>
-        </div>
-      </div>
-    </div>
+  <nav class="flex justify-between items-center p-3 bg-white shadow" role="navigation" aria-label="main navigation">
+    <nuxt-link class="font-mono text-2xl font-bold text-purple-600" to="/">#! /nirebu</nuxt-link>
+    <nuxt-link class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white font-semibold" to="/blog/">Blog</nuxt-link>
   </nav>
 </template>
 
@@ -27,6 +10,3 @@ export default {
   name: "Navbar"
 };
 </script>
-
-<style>
-</style>

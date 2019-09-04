@@ -1,40 +1,36 @@
 <template>
-  <section class="section">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-10-tablet is-9-desktop">
-          <header class="title has-text-centered">
-            <div class="nirebu-title has-background-gradient">
-              Latest blog posts
-            </div>
-          </header>
-          <article v-for="(post,key) in bloglist" :key="key" class="columns is-centered">
-            <div v-if="post.cover_image" class="column is-3-desktop">
-              <nuxt-link :to="`/blog/${post.slug}`">
-                <figure class="image">
-                  <img
-                    :src="require(`~/assets/images/articles/${post.cover_image}?size=640`)"
-                    :alt="post.cover_image_cp"
-                    loading="lazy"
-                  >
-                </figure>
-              </nuxt-link>
-            </div>
-            <div class="column">
-              <p class="title">
-                <nuxt-link :to="`/blog/${post.slug}`">{{ post.title }}</nuxt-link>
-              </p>
-              <p class="subtitle">{{ post.description }}</p>
-              <div class="level">
-                <p class="small level-left">Published on {{ post.ctime }}</p>
-                <p class="subtitle level-right">
-                  <nuxt-link :to="`/blog/${post.slug}`">Keep reading &rarr;</nuxt-link>
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
+  <section>
+    <h3 class="font-bold text-3xl lg:text-4xl text-gray-800 px-3">
+      Latest posts
+    </h3>
+    <article
+      v-for="(post,key) in bloglist" :key="key"
+      class="py-2 px-3 rounded-lg hover:bg-gray-200 hover:shadow-inner"
+      :class="key == bloglist.length -1 ? '' : 'mb-1'"
+    >
+      <nuxt-link :to="`/blog/${post.slug}`">
+      <div v-if="post.cover_image">
+          <figure>
+            <img
+              :src="require(`~/assets/images/articles/${post.cover_image}?size=640`)"
+              :alt="post.cover_image_cp"
+              loading="lazy"
+            >
+          </figure>
       </div>
+      <div>
+        <h4 class="text-xl font-normal text-purple-600">
+          {{ post.title }}
+        </h4>
+        <p class="mt-1 text-sm text-gray-700">{{ post.description }}</p>
+        <p class="mt-1 text-sm text-gray-600">Published on {{ post.ctime }}</p>
+      </div>
+      </nuxt-link>
+    </article>
+    <div
+      v-if="$store.state.bloglist.length > postsPerPage && !isPaginated"
+      class="px-3"
+    >
     </div>
   </section>
 </template>
@@ -59,13 +55,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.preview-image {
-  width: 12vw;
-}
-
-.nirebu-title {
-  padding: 0.25em 0 0.25em;
-}
-</style>

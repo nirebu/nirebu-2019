@@ -1,12 +1,10 @@
 ---
 title: How I started contributing to opensource by opening my first pull request
 published: true
-description: How I started contributing to opensource by opening my first pull request
+description: The reasoning and the process behind one of my first contributions to opensource packages
 tags: opensource,github,beginners,vue
 ctime: 2019-08-18
 ---
-
-and it was easier than expected. Like, really damn easier than expected.
 
 ## The problem
 

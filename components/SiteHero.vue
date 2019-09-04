@@ -1,17 +1,8 @@
 <template>
-  <section class="hero is-fullheight-with-navbar is-primary has-bg-img">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title">Hello, I'm Nicol&ograve; Rebughini!</h1>
-        <h2 class="subtitle">Sysadmin and learner 🌱</h2>
-      </div>
-    </div>
+  <section class="px-3 mx-auto flex items-center">
+        <div>
+          <h1 class="text-4xl lg:text-5xl text-gray-800 font-bold">Hi, I'm Nicol&ograve;</h1>
+          <p class="font-medium text-gray-700">I'm an email deliverability tech, focusing on system standardisation and deployment automation. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches.</p>
+        </div>
   </section>
 </template>
-
-<style scoped>
-.has-bg-img {
-  background: url("~assets/images/hero2.jpg") center center;
-  background-size: cover;
-}
-</style>

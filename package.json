@@ -14,8 +14,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.8.1",
-    "prismic-javascript": "^2.0.3",
+    "nuxt": "^2.9.2",
     "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
@@ -28,7 +27,6 @@
     "@nuxtjs/moment": "^1.2.0",
     "@nuxtjs/sitemap": "^1.2.0",
     "@nuxtjs/style-resources": "^0.1.2",
-    "bulma": "^0.7.4",
     "frontmatter-markdown-loader": "^1.6.0",
     "fs": "0.0.1-security",
     "glob": "^7.1.4",
@@ -39,6 +37,7 @@
     "nuxt-fontawesome": "^0.4.0",
     "responsive-loader": "^1.2.0",
     "sass-loader": "^7.1.0",
-    "sharp": "^0.23.0"
+    "sharp": "^0.23.0",
+    "tailwindcss": "^1.1.2"
   }
 }

@@ -1,24 +1,21 @@
 <template>
   <div>
-    <SiteHero/>
-    <ArticleList :isPaginated="false" :postsPerPage="2"/>
-    <PersonalBio/>
-    <Roles/>
+    <SiteHero class="mt-4"/>
+    <Projects class="mt-4" />
+    <ArticleList class="mt-4" :isPaginated="false" :postsPerPage="2"/>
   </div>
 </template>
 
 <script>
-import PersonalBio from "~/components/PersonalBio";
-import Roles from "~/components/Roles";
 import SiteHero from "~/components/SiteHero";
 import ArticleList from "~/components/ArticleList";
+import Projects from "~/components/Projects";
 
 export default {
   components: {
-    PersonalBio,
-    Roles,
     SiteHero,
-    ArticleList
+    ArticleList,
+    Projects,
   }
 };
 </script>
