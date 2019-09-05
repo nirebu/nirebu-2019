@@ -32,18 +32,18 @@ export default {
 					title: "Piwol",
 					description: "Transform your Raspberry Pi in a local Wake on Lan server and access your remote machines, even if they were off",
 					repo: "https://github.com/nirebu/piwol-server",
-					home: "https://piwol.com"
+					//home: "https://piwol.com"
 				},
 				{
 					title: "Naos QG" ,
 					description: "A hacked together Vue.js frontend interfacing via websockets to the Mionix Naos Quantified Gaming mouse",
 					repo: "https://github.com/nirebu/naos-quantified-gaming"
 				},
-				{
-					title: "Stackrep",
-					description: "Keep your domain and IP reputations monitored over time",
-					home: "https://stackrep.com"
-				},
+				// {
+				// 	title: "Stackrep",
+				// 	description: "Keep your domain and IP reputations monitored over time",
+				// 	home: "https://stackrep.com"
+				// },
 				{
 					title: "Nirebu.com",
 					description: "Check the source code and how my personal website is built",
