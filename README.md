@@ -31,22 +31,8 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 
 Not a comprehensive list of things I want to do
 
-### Code styling
-
-Styling for embedded blocks of Vue code
-
-### Sitemap
-
-Building a sitemap with @nuxtjs/sitemap
-
-### Blog pagination and general styling
-
-Right now my blog page is really ugly, and need pagination
-
-### Latest articles component
-
-To showcase the most recent articles in the home page
-
-### Last.fm integration
-
-I want to design a page and some Vue components, consuming data fetched from my [last.fm profile](https://last.fm/user/nirebu/)
+- [ ] Code styling for embedded blocks of Vue code
+- [x] Sitemap
+- [ ] Blog pagination
+- [x] Latest articles component
+- [ ] Last.fm integration designing a page and some Vue components, consuming data fetched from my [last.fm profile](https://last.fm/user/nirebu/)
