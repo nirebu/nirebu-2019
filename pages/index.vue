@@ -16,6 +16,11 @@ export default {
     SiteHero,
     ArticleList,
     Projects,
+  },
+  head() {
+    return {
+      title: "Home",
+    };
   }
 };
 </script>

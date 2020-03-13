@@ -20,7 +20,7 @@ module.exports = {
         hid: "description",
         name: "description",
         content:
-          "I'm an email deliverability tech. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches."
+          "I'm a sysadmin and a email deliverability tech. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches."
       },
       {
         hid: "keywords",
@@ -32,11 +32,11 @@ module.exports = {
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@nirebu" },
       { name: "twitter:url", content: "https://nirebu.com" },
-      { name: "twitter:description", content: "I'm an email deliverability tech. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches" },
+      { name: "twitter:description", content: "I'm a sysadmin and a email deliverability tech. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches." },
 
       { name: "og:url", content: "https://nirebu.com" },
       { name: "og:locale", content: "en_GB" },
-      { name: "og:description", content: "I'm an email deliverability tech. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches." },
+      { name: "og:description", content: "I'm a sysadmin and a email deliverability tech. In my spare time I contribute to open source projects and develop apps to scratch my proverbial itches." },
       { name: "og:title", content: "Nicolò Rebughini - Devops" },
       { name: "og:type", content: "website" },
     ],
