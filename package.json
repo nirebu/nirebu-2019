@@ -31,7 +31,7 @@
     "fs": "0.0.1-security",
     "glob": "^7.1.4",
     "jimp": "^0.6.4",
-    "markdown-it-highlightjs": "^3.0.0",
+    "markdown-it-highlightjs": "^3.3.1",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "nuxt-fontawesome": "^0.4.0",
