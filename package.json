@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.9.2",
+    "nuxt": "^2.15.8",
     "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
